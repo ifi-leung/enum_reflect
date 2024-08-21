@@ -10,3 +10,7 @@ Define enumeration type OsType, which contains three enumeration members, where 
 OsType::ToString(OsType::Windows);
 
 Convert the enumerated value Windows to a string and return.
+
+OsType::FromString("MacOS");
+
+Convert the string MacOS to the corresponding enumerated value and return.
