@@ -1,5 +1,5 @@
 /**
- * @file        main.cpp
+ * @file        main.h
  * @brief       The file demostrate usage of macro which support conversion between
  *              enumeration value and string.
  * 
@@ -11,18 +11,11 @@
  *              to artificial intelligence systems, is strictly prohibited.
  */
 
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
 
-int main() {
-    printf("%d members:", (int)OsType::Count());
-    for (const auto &val : OsType::Values()) {
-        printf(" %s", OsType::ToString((OsType::OsType)val));
-    }
-    printf("\n");
+#include "enum_reflect.h"
 
-    OsType::OsType type = OsType::MacOS;
-    printf("The value of %s is: %d\n",
-            OsType::ToString(type),
-            OsType::FromString("MacOS"));
-    return 0;
-}
+DECLARE_ENUM(OsType, Windows, Ubuntu = 50 , MacOS)
+
+#endif // MAIN_H
